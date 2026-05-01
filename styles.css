@@ -1,0 +1,1954 @@
+/* ============================================
+   LANDING PAGE PREMIUM - ESTILO GLOBAL
+   ============================================ */
+
+/* Variáveis CSS para fácil manutenção */
+:root {
+  --color-bg-primary: #0a0e27;
+  --color-bg-secondary: #1a1f3a;
+  --color-accent: #4f46e5;
+  --color-accent-light: #6366f1;
+  --color-accent-bright: #818cf8;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0aec0;
+  --color-success: #10b981;
+  --color-border: #334155;
+  
+  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+  --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --gradient-card: linear-gradient(135deg, #1a1f3a 0%, #0f172a 100%);
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+  
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ============================================
+   RESET E BASE
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: clamp(14px, 2vw, 16px);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 5vw, 24px);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 14, 39, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(52, 65, 85, 0.2);
+  transition: var(--transition-base);
+  padding: 16px 0;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+}
+
+.logo-icon {
+  font-size: 24px;
+}
+
+.logo-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-align: center;
+}
+
+.btn-header {
+  padding: 10px 24px;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.btn-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(79, 70, 229, 0.4);
+}
+
+.btn-secondary {
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent-light);
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: rgba(79, 70, 229, 0.1);
+  border-color: var(--color-accent-light);
+}
+
+.btn-large {
+  padding: 16px 40px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.btn-purchase {
+  width: 100%;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  padding: clamp(60px, 12vw, 100px) 0 clamp(50px, 10vw, 80px);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero-title {
+  font-size: clamp(28px, 8vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  background: linear-gradient(180deg, white 0%, #cbd5f5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: clamp(14px, 2.5vw, 18px);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Trust indicators */
+.trust-indicators {
+  display: flex;
+  gap: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(52, 65, 85, 0.3);
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trust-number {
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.trust-label {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* E-book mockup */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.ebook-mockup {
+  position: relative;
+  width: 260px;
+  height: 380px;
+  transform-style: preserve-3d;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.ebook-spine {
+  position: absolute;
+  left: -12px;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(79, 70, 229, 0.3) 0%, rgba(79, 70, 229, 0.1) 100%);
+  border-radius: 6px 0 0 6px;
+}
+
+.ebook-front {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-card);
+  border-radius: 12px;
+  border: 1px solid rgba(79, 70, 229, 0.3);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.ebook-badge {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ebook-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+  background: linear-gradient(180deg, white 0%, #cbd5f5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ebook-subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.ebook-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.ebook-depth {
+  position: absolute;
+  right: -8px;
+  top: 8px;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  border-radius: 0 12px 12px 0;
+}
+
+/* ============================================
+   SECTION HEADERS
+   ============================================ */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: clamp(28px, 6vw, 42px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   BENEFITS SECTION
+   ============================================ */
+
+.benefits {
+  padding: clamp(60px, 12vw, 100px) 0;
+  background: var(--color-bg-primary);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.benefit-card {
+  background: var(--gradient-card);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(79, 70, 229, 0.4);
+  box-shadow: 0 16px 40px rgba(79, 70, 229, 0.15);
+}
+
+.benefit-icon {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-accent-light);
+}
+
+.benefit-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.benefit-card p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================
+   CONTENT OVERVIEW SECTION
+   ============================================ */
+
+.content-overview {
+  padding: clamp(60px, 12vw, 100px) 0;
+  background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+}
+
+.content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.content-module {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  background: rgba(79, 70, 229, 0.05);
+  border: 1px solid rgba(79, 70, 229, 0.15);
+  border-radius: 12px;
+  padding: 32px;
+  transition: var(--transition-smooth);
+}
+
+.content-module:hover {
+  border-color: rgba(79, 70, 229, 0.3);
+  background: rgba(79, 70, 229, 0.08);
+}
+
+.module-number {
+  font-size: 48px;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  min-width: 70px;
+}
+
+.module-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.module-lessons {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.module-lessons li {
+  padding-left: 28px;
+  position: relative;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.module-lessons li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-success);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+
+.testimonials {
+  padding: clamp(60px, 12vw, 100px) 0;
+  background: var(--color-bg-primary);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.testimonial-card {
+  background: var(--gradient-card);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(79, 70, 229, 0.4);
+  box-shadow: 0 16px 40px rgba(79, 70, 229, 0.15);
+}
+
+.testimonial-stars {
+  font-size: 16px;
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+.testimonial-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.testimonial-author strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.testimonial-author span {
+  display: block;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+/* ============================================
+   PRICING SECTION
+   ============================================ */
+
+.pricing {
+  padding: clamp(60px, 12vw, 100px) 0;
+  background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+}
+
+.pricing-card-container {
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  width: 100%;
+  background: var(--gradient-card);
+  border: 2px solid rgba(79, 70, 229, 0.3);
+  border-radius: 20px;
+  padding: 48px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(79, 70, 229, 0.5);
+  box-shadow: 0 20px 50px rgba(79, 70, 229, 0.2);
+}
+
+.premium-pricing {
+  border-color: rgba(79, 70, 229, 0.4);
+}
+
+.pricing-badge {
+  display: inline-block;
+  background: var(--gradient-success);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.pricing-value {
+  margin: 24px 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+}
+
+.price-current {
+  font-size: clamp(36px, 8vw, 52px);
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.price-original {
+  font-size: clamp(16px, 3vw, 24px);
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.pricing-description {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  margin: 16px 0 32px;
+}
+
+.pricing-includes {
+  text-align: left;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px 0;
+  border: 1px solid rgba(79, 70, 229, 0.15);
+}
+
+.pricing-includes h3 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  color: var(--color-accent-light);
+}
+
+.pricing-includes ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pricing-includes li {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pricing-includes li::before {
+  content: '';
+  display: inline;
+}
+
+.pricing-guarantee {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-top: 24px;
+}
+
+/* ============================================
+   FINAL CTA SECTION
+   ============================================ */
+
+.final-cta {
+  padding: clamp(60px, 12vw, 80px) 0;
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, rgba(79, 70, 229, 0.1) 100%);
+  border-top: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+.cta-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: clamp(28px, 6vw, 44px);
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.cta-content p {
+  font-size: clamp(14px, 2.5vw, 18px);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  background: var(--color-bg-primary);
+  border-top: 1px solid rgba(52, 65, 85, 0.3);
+  padding: 48px 0;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.footer-brand .logo-icon {
+  font-size: 18px;
+}
+
+.footer-content p {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.footer-links a:hover {
+  color: var(--color-accent-light);
+}
+
+/* ============================================
+   RESPONSIVIDADE - BREAKPOINTS PRECISOS
+   ============================================ */
+
+/* Ultra-wide desktop (2560px+) */
+@media (min-width: 2560px) {
+  .hero-container {
+    gap: 80px;
+  }
+
+  .benefits-grid,
+  .testimonials-grid {
+    gap: 48px;
+  }
+}
+
+/* Large desktop (1440px - 2560px) */
+@media (min-width: 1440px) {
+  .hero-container {
+    gap: 80px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop (1025px - 1440px) */
+@media (min-width: 1025px) {
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content-module {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+/* Tablet grande (912px - 1024px) */
+@media (max-width: 1024px) and (min-width: 912px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ebook-mockup {
+    width: 280px;
+    height: 400px;
+  }
+}
+
+/* Tablet médio (820px - 911px) */
+@media (max-width: 911px) and (min-width: 820px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ebook-mockup {
+    width: 260px;
+    height: 380px;
+  }
+
+  .section-header {
+    margin-bottom: 50px;
+  }
+
+  .content-module {
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+
+  .module-number {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+}
+
+/* Tablet pequeno (768px - 819px) */
+@media (max-width: 819px) and (min-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ebook-mockup {
+    width: 240px;
+    height: 360px;
+  }
+
+  .section-header {
+    margin-bottom: 45px;
+  }
+
+  .content-module {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .module-number {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .pricing-card {
+    padding: 40px 32px;
+  }
+}
+
+/* Mobile grande (640px - 767px) */
+@media (max-width: 767px) and (min-width: 640px) {
+  .header .container {
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .btn-header {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+
+  .btn-large {
+    padding: 13px 28px;
+    font-size: 14px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .benefit-card {
+    padding: 28px 20px;
+  }
+
+  .benefit-card h3 {
+    font-size: 18px;
+  }
+
+  .ebook-mockup {
+    width: 220px;
+    height: 330px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    padding: 24px 20px;
+  }
+
+  .content-module {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .module-number {
+    font-size: 28px;
+  }
+
+  .module-content h3 {
+    font-size: 17px;
+  }
+
+  .section-header {
+    margin-bottom: 35px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+  }
+
+  .pricing-card {
+    padding: 32px 24px;
+  }
+
+  .pricing-includes {
+    padding: 18px;
+    margin: 20px 0;
+  }
+
+  .pricing-includes h3 {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .pricing-includes li {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .trust-indicators {
+    gap: 16px;
+    padding-top: 16px;
+  }
+
+  .footer .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-links {
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+/* Mobile médio (500px - 639px) */
+@media (max-width: 639px) and (min-width: 500px) {
+  .container {
+    padding: 0 clamp(12px, 4vw, 16px);
+  }
+
+  .header .container {
+    gap: 10px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  .btn {
+    padding: 9px 16px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  .btn-header {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  .btn-large {
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 50px 0 35px;
+  }
+
+  .hero-container {
+    gap: 30px;
+  }
+
+  .hero-cta {
+    gap: 10px;
+  }
+
+  .ebook-mockup {
+    width: 200px;
+    height: 300px;
+  }
+
+  .ebook-front {
+    padding: 32px 24px;
+  }
+
+  .ebook-badge {
+    padding: 5px 10px;
+    font-size: 9px;
+  }
+
+  .ebook-title {
+    font-size: 20px;
+  }
+
+  .ebook-subtitle {
+    font-size: 13px;
+  }
+
+  .benefits {
+    padding: 50px 0;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .benefit-card {
+    padding: 24px 18px;
+    gap: 14px;
+  }
+
+  .benefit-icon {
+    font-size: 28px;
+  }
+
+  .benefit-card h3 {
+    font-size: 17px;
+  }
+
+  .benefit-card p {
+    font-size: 14px;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  .section-header p {
+    font-size: 13px;
+  }
+
+  .content-overview {
+    padding: 50px 0;
+  }
+
+  .content-list {
+    gap: 24px;
+  }
+
+  .content-module {
+    padding: 18px;
+    gap: 12px;
+    border-radius: 10px;
+  }
+
+  .module-number {
+    font-size: 24px;
+    min-width: 50px;
+  }
+
+  .module-content h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .module-lessons li {
+    font-size: 13px;
+    padding-left: 24px;
+  }
+
+  .testimonials {
+    padding: 50px 0;
+  }
+
+  .testimonials-grid {
+    gap: 18px;
+  }
+
+  .testimonial-card {
+    padding: 20px 16px;
+    gap: 14px;
+  }
+
+  .testimonial-text {
+    font-size: 14px;
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .testimonial-author strong {
+    font-size: 13px;
+  }
+
+  .testimonial-author span {
+    font-size: 11px;
+  }
+
+  .pricing {
+    padding: 50px 0;
+  }
+
+  .pricing-card {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+
+  .pricing-value {
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .pricing-description {
+    font-size: 13px;
+    margin: 12px 0 24px;
+  }
+
+  .pricing-includes {
+    padding: 16px;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+
+  .pricing-includes h3 {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .pricing-includes li {
+    font-size: 12px;
+  }
+
+  .pricing-guarantee {
+    font-size: 11px;
+    margin-top: 16px;
+  }
+
+  .final-cta {
+    padding: 50px 0;
+  }
+
+  .cta-content {
+    max-width: 100%;
+  }
+
+  .trust-indicators {
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 14px;
+  }
+
+  .trust-number {
+    font-size: 14px;
+  }
+
+  .trust-label {
+    font-size: 11px;
+  }
+
+  .footer {
+    padding: 36px 0;
+  }
+
+  .footer .container {
+    gap: 18px;
+  }
+
+  .footer-content {
+    gap: 12px;
+  }
+
+  .footer-brand {
+    font-size: 13px;
+  }
+
+  .footer-content p {
+    font-size: 12px;
+  }
+
+  .footer-links {
+    gap: 14px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+  }
+}
+
+/* Mobile pequeno (400px - 499px) */
+@media (max-width: 499px) and (min-width: 400px) {
+  .container {
+    padding: 0 14px;
+  }
+
+  .header {
+    padding: 12px 0;
+  }
+
+  .header .container {
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .logo-icon {
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: 11px;
+    border-radius: 5px;
+  }
+
+  .btn-header {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .btn-large {
+    padding: 11px 20px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 40px 0 28px;
+  }
+
+  .hero-container {
+    gap: 25px;
+  }
+
+  .hero-content {
+    gap: 24px;
+  }
+
+  .hero-cta {
+    gap: 8px;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+  }
+
+  .ebook-mockup {
+    width: 180px;
+    height: 270px;
+  }
+
+  .ebook-front {
+    padding: 28px 20px;
+    border-radius: 10px;
+  }
+
+  .ebook-badge {
+    padding: 4px 8px;
+    font-size: 8px;
+  }
+
+  .ebook-title {
+    font-size: 18px;
+  }
+
+  .ebook-subtitle {
+    font-size: 12px;
+  }
+
+  .benefits {
+    padding: 40px 0;
+  }
+
+  .benefits-grid {
+    gap: 16px;
+  }
+
+  .benefit-card {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .benefit-icon {
+    font-size: 24px;
+  }
+
+  .benefit-card h3 {
+    font-size: 16px;
+  }
+
+  .benefit-card p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 12px;
+  }
+
+  .section-header p {
+    font-size: 12px;
+  }
+
+  .content-overview {
+    padding: 40px 0;
+  }
+
+  .content-list {
+    gap: 20px;
+  }
+
+  .content-module {
+    padding: 16px;
+    gap: 10px;
+    border-radius: 8px;
+  }
+
+  .module-number {
+    font-size: 20px;
+    min-width: 45px;
+  }
+
+  .module-content h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .module-lessons {
+    gap: 10px;
+  }
+
+  .module-lessons li {
+    font-size: 12px;
+    padding-left: 20px;
+  }
+
+  .module-lessons li::before {
+    font-size: 14px;
+  }
+
+  .testimonials {
+    padding: 40px 0;
+  }
+
+  .testimonials-grid {
+    gap: 16px;
+  }
+
+  .testimonial-card {
+    padding: 18px 14px;
+    gap: 12px;
+  }
+
+  .testimonial-stars {
+    font-size: 14px;
+  }
+
+  .testimonial-text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .testimonial-author {
+    gap: 10px;
+    padding-top: 12px;
+  }
+
+  .author-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 11px;
+  }
+
+  .testimonial-author strong {
+    font-size: 12px;
+  }
+
+  .testimonial-author span {
+    font-size: 10px;
+  }
+
+  .pricing {
+    padding: 40px 0;
+  }
+
+  .pricing-card-container {
+    max-width: 100%;
+  }
+
+  .pricing-card {
+    padding: 24px 16px;
+    border-radius: 14px;
+  }
+
+  .pricing-badge {
+    padding: 5px 10px;
+    font-size: 9px;
+    margin-bottom: 16px;
+  }
+
+  .pricing-value {
+    gap: 6px;
+    margin: 12px 0;
+  }
+
+  .pricing-description {
+    font-size: 12px;
+    margin: 10px 0 20px;
+  }
+
+  .pricing-includes {
+    padding: 14px;
+    margin: 16px 0;
+    border-radius: 8px;
+  }
+
+  .pricing-includes h3 {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .pricing-includes ul {
+    gap: 8px;
+  }
+
+  .pricing-includes li {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .pricing-guarantee {
+    font-size: 10px;
+    margin-top: 12px;
+  }
+
+  .final-cta {
+    padding: 40px 0;
+  }
+
+  .cta-content {
+    max-width: 100%;
+  }
+
+  .trust-indicators {
+    gap: 12px;
+    padding-top: 12px;
+  }
+
+  .trust-item {
+    gap: 3px;
+  }
+
+  .trust-number {
+    font-size: 13px;
+  }
+
+  .trust-label {
+    font-size: 10px;
+  }
+
+  .footer {
+    padding: 28px 0;
+  }
+
+  .footer .container {
+    gap: 16px;
+  }
+
+  .footer-content {
+    gap: 10px;
+  }
+
+  .footer-brand {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .footer-brand .logo-icon {
+    font-size: 16px;
+  }
+
+  .footer-content p {
+    font-size: 11px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 11px;
+  }
+}
+
+/* Mobile minúsculo (320px - 399px) */
+@media (max-width: 399px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .header {
+    padding: 10px 0;
+  }
+
+  .header .container {
+    gap: 6px;
+  }
+
+  .logo {
+    font-size: 13px;
+  }
+
+  .logo-icon {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 7px 12px;
+    font-size: 10px;
+    border-radius: 4px;
+  }
+
+  .btn-header {
+    padding: 5px 8px;
+    font-size: 9px;
+  }
+
+  .btn-large {
+    padding: 10px 18px;
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 32px 0 24px;
+  }
+
+  .hero-container {
+    gap: 20px;
+  }
+
+  .hero-content {
+    gap: 20px;
+  }
+
+  .hero-cta {
+    gap: 6px;
+    flex-direction: column;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    font-size: 11px;
+  }
+
+  .ebook-mockup {
+    width: 160px;
+    height: 240px;
+  }
+
+  .ebook-front {
+    padding: 24px 16px;
+    border-radius: 8px;
+  }
+
+  .ebook-badge {
+    padding: 3px 6px;
+    font-size: 7px;
+    margin-bottom: 8px;
+  }
+
+  .ebook-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .ebook-subtitle {
+    font-size: 11px;
+  }
+
+  .benefits {
+    padding: 32px 0;
+  }
+
+  .benefits-grid {
+    gap: 14px;
+  }
+
+  .benefit-card {
+    padding: 18px 14px;
+    gap: 10px;
+  }
+
+  .benefit-icon {
+    font-size: 20px;
+  }
+
+  .benefit-card h3 {
+    font-size: 15px;
+  }
+
+  .benefit-card p {
+    font-size: 12px;
+  }
+
+  .section-header {
+    margin-bottom: 24px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 10px;
+  }
+
+  .section-header p {
+    font-size: 11px;
+  }
+
+  .content-overview {
+    padding: 32px 0;
+  }
+
+  .content-list {
+    gap: 16px;
+  }
+
+  .content-module {
+    padding: 14px;
+    gap: 8px;
+    border-radius: 6px;
+  }
+
+  .module-number {
+    font-size: 18px;
+    min-width: 40px;
+  }
+
+  .module-content h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .module-lessons {
+    gap: 8px;
+  }
+
+  .module-lessons li {
+    font-size: 11px;
+    padding-left: 18px;
+  }
+
+  .module-lessons li::before {
+    font-size: 12px;
+  }
+
+  .testimonials {
+    padding: 32px 0;
+  }
+
+  .testimonials-grid {
+    gap: 14px;
+  }
+
+  .testimonial-card {
+    padding: 16px 12px;
+    gap: 10px;
+  }
+
+  .testimonial-stars {
+    font-size: 12px;
+  }
+
+  .testimonial-text {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .testimonial-author {
+    gap: 8px;
+    padding-top: 10px;
+  }
+
+  .author-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+  }
+
+  .testimonial-author strong {
+    font-size: 11px;
+  }
+
+  .testimonial-author span {
+    font-size: 9px;
+  }
+
+  .pricing {
+    padding: 32px 0;
+  }
+
+  .pricing-card {
+    padding: 20px 14px;
+    border-radius: 12px;
+  }
+
+  .pricing-badge {
+    padding: 4px 8px;
+    font-size: 8px;
+    margin-bottom: 12px;
+  }
+
+  .pricing-value {
+    gap: 4px;
+    margin: 10px 0;
+  }
+
+  .pricing-description {
+    font-size: 11px;
+    margin: 8px 0 16px;
+  }
+
+  .pricing-includes {
+    padding: 12px;
+    margin: 14px 0;
+    border-radius: 6px;
+  }
+
+  .pricing-includes h3 {
+    font-size: 9px;
+    margin-bottom: 6px;
+  }
+
+  .pricing-includes ul {
+    gap: 6px;
+  }
+
+  .pricing-includes li {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .pricing-guarantee {
+    font-size: 9px;
+    margin-top: 10px;
+  }
+
+  .final-cta {
+    padding: 32px 0;
+  }
+
+  .trust-indicators {
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  .trust-item {
+    gap: 2px;
+  }
+
+  .trust-number {
+    font-size: 12px;
+  }
+
+  .trust-label {
+    font-size: 9px;
+  }
+
+  .footer {
+    padding: 24px 0;
+  }
+
+  .footer .container {
+    gap: 14px;
+  }
+
+  .footer-content {
+    gap: 8px;
+  }
+
+  .footer-brand {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .footer-brand .logo-icon {
+    font-size: 14px;
+  }
+
+  .footer-content p {
+    font-size: 10px;
+  }
+
+  .footer-links {
+    gap: 8px;
+  }
+
+  .footer-links a {
+    font-size: 10px;
+  }
+}
